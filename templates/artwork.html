@@ -1,0 +1,67 @@
+{% extends "index.html" %}
+{% block header %}
+{{super()}}
+    <script>
+        var artwork_details= {{artwork_details|tojson}}
+    </script>
+    <script type="text/javascript" src="{{ url_for('static',filename='artwork.js') }}"></script>
+    <style>
+        #exh{
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .row{
+            border: 1px solid rgb(249, 213, 83);
+            border-radius: 5px;
+            background-color: rgb(249, 242, 214);
+        }
+        .result {
+          width: 100%;
+        }
+        /* .image_div {
+            width: 10px;
+            height: 10px;
+        }
+
+        /* resize images */
+        /* .image_div img {
+            width: 50%;
+            height: 50%;
+        } */ 
+
+        /* img.Image{
+            max-width: 50%;
+            display: block;
+        }
+         */
+
+        img {
+          max-width: 100%;
+          max-height: 50%;
+        }
+        .image_div{
+            width: 300px;
+            height: 100px;
+        }
+        .result{
+            font-weight: normal;
+            font-size: 16px;
+        }
+        .name{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .ex{
+            /* padding-top: 10px;
+            padding-bottom: 10px; */
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+
+    </style>
+{% endblock %}
+{% block content %}
+<div class="allexhibits" id="buysell">Artwork</div>
+{% endblock %}

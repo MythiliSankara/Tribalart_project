@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block header %}
+{{super()}}
+<script>
+    var tribes = {{tribes|tojson}}
+</script>
+<script type="text/javascript" src="{{ url_for('static',filename='tribes.js') }}"></script>
+<style>
+    #title{
+        font-weight: bold;
+        font-size: 36px;
+        text-align: center;
+    }
+    .result{
+        align-items: center;
+    }
+    .table{
+        width: 50%;
+        margin: 0 auto;
+    }
+    table,
+    thead,
+    tr,
+    tbody,
+    th,
+    td {
+        text-align: center;
+    }
+
+    .table td {
+        text-align: center;
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+<div id="title">The top tribes</div>
+{% endblock %}

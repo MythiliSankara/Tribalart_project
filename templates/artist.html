@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% block header %}
+{{super()}}
+<script>
+    var artist = {{artist|tojson}}
+    var art = {{art|tojson}}
+    console.log(art)
+</script>
+<script type="text/javascript" src="{{ url_for('static',filename='artist.js') }}"></script>
+<style>
+    #title{
+        font-weight: bold;
+        font-size: 36px;
+        text-align: center;
+    }
+    .result{
+        align-items: center;
+    }
+    .table{
+        width: 50%;
+        margin: 0 auto;
+    }
+    table,
+    thead,
+    tr,
+    tbody,
+    th,
+    td {
+        text-align: center;
+    }
+
+    .table td {
+        text-align: center;
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+<div id="placeholder"></div>
+<div id="buysell">Buy Sell Information
+</div>
+{% endblock %}

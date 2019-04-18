@@ -1,0 +1,46 @@
+<html>
+    {% block header %}
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384- GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <title>{% block title %}{% endblock %} - Tribes of India</title>
+    </head>
+    <style>
+        body{
+          font-size: 15pt;
+          font-family: arial;
+        }
+      </style>
+    {% endblock %}
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(255,213,43);">
+            <a class="navbar-brand" href="/">Tribes App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/allmuseums">All tribes<span class="sr-only">(current)</span></a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="/exhibition/new">Add Exhibition</a>
+                </li> -->
+              </ul>
+            </div>
+          </nav>
+          <div class="container">
+              <div class="content">
+
+                <!-- child template -->
+                {% block content %}
+                {% endblock %}
+
+              </div>
+            </div>
+    </body>
+
+
+</html>

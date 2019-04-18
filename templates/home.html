@@ -1,0 +1,161 @@
+{% extends "index.html" %}
+{% block header %}
+{{super()}}
+<script>
+    var tribe_art = {{tribe_art|tojson}}
+</script>
+<script type="text/javascript" src="{{ url_for('static',filename='newhome.js') }}"></script>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Style the search field */
+    form.search_bar input[type=text] {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid rgb(299, 240, 222);
+        float: left;
+        width: 80%;
+        background: rgb(299, 240, 222);
+    }
+
+    /* Style the submit button */
+    form.search_bar button {
+        float: left;
+        width: 10%;
+        padding: 10px;
+        background: rgb(249, 213, 83);
+        color: white;
+        font-size: 17px;
+        border: 1px solid rgb(299, 240, 222);
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+
+    form.search_bar button:hover {
+        background: rgb(240, 180, 55);
+    }
+
+    /* Clear floats */
+    form.search_bar::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    #search{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    #header{
+        width: 100%;
+        border: 1px solid rgb(249, 213, 83);
+        border-radius: 5px;
+        background-color: rgb(249, 242, 214);
+    }
+    .col-md-12{
+        padding-bottom: 10px;
+    }
+    .container-fluid{
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    #know_more{
+        color: rgb(240, 180, 55);
+    }
+    #know_more a:hover{
+        color: rgb(240, 140, 40);
+    }
+    .name{
+        font-weight: bold;
+    }
+    #view_list{
+        float: left;
+        width: 10%;
+        padding: 10px;
+        background: rgb(249, 213, 83);
+        color: white;
+        font-size: 17px;
+        border: 1px solid rgb(249, 213, 83);
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+    #add{
+        float: left;
+        width: 10%;
+        padding: 10px;
+        background: rgb(249, 213, 83);
+        color: white;
+        font-size: 17px;
+        border: 1px solid rgb(249, 213, 83);
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+    .welcome_text{
+        font-weight: bold;
+        font-family: Arial;
+        font-size: 24px;
+        text-align: center;
+    }
+    .table{
+        background-color: rgb(249, 242, 214);
+        width: 97%;
+    }
+    .table_heading{
+        padding-top: 10px;
+        width: 97%;
+        text-align: center;
+    }
+    .welcome_text{
+        padding-top: 20px;
+    }
+    .buttons{
+        padding-top: 10px;
+    }
+    .col-md-3{
+        display: inline-block;
+    }
+    .left{
+        text-align: right;
+    }
+    .right{
+        text-align: left;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% block content %}
+<div class="container-fluid" id="table_header">
+    <div class="row" id="header">
+        <div class="col-md-12">
+            <div class="welcome_text">
+                    Welcome to your Roots Studio! This platform has digitized last-generation art from rural communities into an online library for licensing. It includes thousands of designs from interior Nagaland to calligraphy from Syria. Check out your inventory of contributing artists, customers, your transaction history and more...
+            </div>
+            <div class="row buttons">
+                <div class="col-md-3 left">
+                    <a href="/artists" >
+                        <button type="button" class="btn btn-primary">Artists</button>
+                    </a>
+                </div>
+                <div class="col-md-3 left">
+                    <a href="/tribes" >
+                        <button type="button" class="btn btn-primary">Tribes</button>
+                    </a>
+                </div>
+                <div class="col-md-3 right">
+                    <a href="/buyers" >
+                        <button type="button" class="btn btn-primary">Buyers</button>
+                    </a>
+                </div>
+                <div class="col-md-3 right">
+                    <a href="/transaction" >
+                        <button type="button" class="btn btn-primary">Transaction</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
